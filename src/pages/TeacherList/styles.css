@@ -91,3 +91,21 @@
     bottom: 0;
 }
 
+@media (min-width: 700px) {
+    #page-teacher-list{
+        max-width: 100vw;
+    }
+
+    #search-teachers {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 16px;
+        position: absolute;
+        bottom: -44px;
+    }
+
+    #search-teachers .input-block + .input-block{
+        margin-top: 0;
+    }
+
+}
