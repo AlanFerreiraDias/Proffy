@@ -55,7 +55,7 @@
     color: var(--color-text-complement);
 }
 
-#page-teacher-form  main footer p im {
+#page-teacher-form  main footer p img {
     margin-right: 2rem;
 }
 
@@ -90,7 +90,7 @@
          margin-bottom: 0;
      }
 
-    #page-teacher-form main fildset{
+    #page-teacher-form main fieldset{
         padding: 0 6.4rem;
     } 
 
