@@ -6,14 +6,40 @@ import TeacherItem from '../../components/TeacherItem';
 
 import './styles.css';
 import Input from '../../components/Input';
+import Select from '../../components/Select';
 
 function TeacherList() {
     return (
         <div id="page-teacher-list" className="container">
             <PageHeader title="Esses são os Proffys disponíveis." >
                 <form id="search-teachers">
-                    <Input name="subject" label="Matéria" />
-                    <Input name="week_day" label="Dia da Semana" />
+                    <Select
+                        name="subject"
+                        label="Matéria"
+                        options={[
+                            { value: 'Artes', label: 'Artes' },
+                            { value: 'Biologia', label: 'Biologia' },
+                            { value: 'Matemática', label: 'Matemática' },
+                            { value: 'Física', label: 'Física' },
+                            { value: 'Geografia', label: 'Geografia' },
+                            { value: 'Literatura', label: 'Literaturas' },
+                            { value: 'História', label: 'História' },
+                            { value: 'Português', label: 'Português' },
+                            { value: 'Química', label: 'Química' }
+                        ]}
+                    />
+                    <Select
+                        name="subject"
+                        label="Dia da Semana"
+                        options={[
+                            { value: '1', label: 'Segunda-feira' },
+                            { value: '2', label: 'Terça-feira' },
+                            { value: '3', label: 'Quarta-feira' },
+                            { value: '4', label: 'Quinta-feira' },
+                            { value: '5', label: 'Sexta-feira' },
+                            { value: '6', label: 'Sábado' },
+                            { value: '0', label: 'Domingo' }]}
+                    />
                     <Input type="time" name="time" label="Hora" />
 
                 </form>
