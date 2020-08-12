@@ -14,7 +14,6 @@ function Landing() {
     const [totalConnections, setTotalConnections] = useState(0);
 
     useEffect(() => {
-        console.log("olar");
         api.get('connections').then(response => {
             const { total } = response.data;
             setTotalConnections(total);
