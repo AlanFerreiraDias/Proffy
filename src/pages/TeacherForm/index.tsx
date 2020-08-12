@@ -1,15 +1,20 @@
 import React, { useState, FormEvent } from 'react';
+import { useHistory } from 'react-router-dom'
 
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
-
-import warningIcon from '../../assets/images/icons/warning.svg';
-
-import './styles.css'
 import Textarea from '../../components/TextArea';
 import Select from '../../components/Select';
 
+import warningIcon from '../../assets/images/icons/warning.svg';
+
+import api from '../../services/api';
+
+import './styles.css'
+
+
 function TeacherForm() {
+    const history = useHistory();
     const [scheduleItems, setScheduleItems] = useState([
         { week_day: 0, from: '', to: '' }
     ])
@@ -43,6 +48,22 @@ function TeacherForm() {
 
     function handleCreateClass(e: FormEvent) {
         e.preventDefault(); //prevents the standart form behaviour (reload the page)
+
+        api.post('classes', {
+            name,
+            avatar,
+            whatsapp,
+            bio,
+            subject,
+            cost: Number(cost),
+            schedule: scheduleItems
+        }).then(() => {
+            alert('Cadastro realizado com sucesso.')
+            history.push('/');
+        }).catch(() => {
+            alert('Erro no cadastro')
+        })
+
         console.log({
             name,
             avatar,
